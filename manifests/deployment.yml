@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: zchoudpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zchoudpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: zchoudpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: zchoudpipelinesjavascriptdocker 
+          image: mycontainerregistryzian.azurecr.io/zchoudpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
